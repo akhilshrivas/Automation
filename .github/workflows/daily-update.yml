@@ -2,8 +2,8 @@ name: Daily Repository Update
 
 on:
   schedule:
-    # Run at 00:00 UTC every day
-    - cron: '0 0 * * *'
+    # Run at 00:17 UTC every day (05:47 AM IST)
+    - cron: '17 0 * * *'
   # Allow manual testing of the workflow
   workflow_dispatch:
 
@@ -23,12 +23,8 @@ jobs:
 
       - name: Configure Git User
         run: |
-          # Use the GitHub Actions bot email and name to ensure correct attribution
-          # This acts as the repository bot, making it clear this is automated activity
-          # If you want this to map directly to your personal user contribution graph, 
-          # you would replace the email below with your GitHub noreply email address.
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "Akhil Shrivas"
+          git config user.email "your-github-email@akhilshrivas0.com"
 
       - name: Perform Daily Update
         run: |
